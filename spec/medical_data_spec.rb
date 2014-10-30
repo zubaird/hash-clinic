@@ -24,13 +24,13 @@ describe 'querying medical data' do
   end
 
   describe 'getting clinic data' do
-    it "gets all the names of the clinics" do
+    xit "gets all the names of the clinics" do
       expect(clinic_names(data)).to match_array([
         "Privet Medical Center", "Mongo's Day Care Facility"
       ])
     end
 
-    it "gets all the clinic ids (their keys)" do
+    xit "gets all the clinic ids (their keys)" do
       expect(clinic_ids(data)).to match_array([
         3002, 3008
       ])
@@ -38,7 +38,7 @@ describe 'querying medical data' do
   end
 
   describe 'associating data' do
-    it "reports the doctors per clinic" do
+    xit "reports the doctors per clinic" do
       expect(clinic_doctors(data, 3002)).to match_array([
         {
           first_name: 'Miriam',
