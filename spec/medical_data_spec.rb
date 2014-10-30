@@ -30,16 +30,16 @@ describe 'querying medical data' do
       ])
     end
 
-    xit "gets all the clinic ids (their keys)" do
+    xit "gets all the clinic ids" do
       expect(clinic_ids(data)).to match_array([
         3002, 3008
       ])
     end
   end
 
-  describe 'associating data' do
-    xit "reports the doctors per clinic" do
-      expect(clinic_doctors(data, 3002)).to match_array([
+  describe 'finding associated data' do
+    xit "reports the doctors that work at clinic" do
+      expect(doctors_at_a_clinic(data, 3002)).to match_array([
         {
           first_name: 'Miriam',
           last_name: 'Strout',
@@ -55,8 +55,8 @@ describe 'querying medical data' do
       # how would you write this with the other clinic data?
     end
 
-    xit "reports the clinic for a given doctor id" do
-      expect(doctor_clinics(data, 'JS12WS')).to match_array([
+    xit "reports the clinics that a given doctor works at" do
+      expect(clinics_for_doctor(data, 'JS12WS')).to match_array([
         {
           name: "Privet Medical Center",
           doctors: ['JS12WS', '42443W']
@@ -64,13 +64,13 @@ describe 'querying medical data' do
       ])
     end
 
-    xit "returns a list of just the names of the doctors clinics" do
-      expect(doctor_clinic_names(data, 'JS12WS')).to match_array([
+    xit "returns a list of just the names of the clinics that a doctor works at" do
+      expect(clinic_names_for_doctor(data, 'JS12WS')).to match_array([
         'Privet Medical Center'
       ])
     end
 
-    xit "returs as list of just the ids of the clinic (the keys) for a given doctor" do
+    xit "returns a list of clinic ids for a given doctor" do
       expect(doctorn_clinic_ids(data, 'JS12WS')).to match_array([
         3002
       ])
