@@ -1,7 +1,8 @@
-# Ruby Exercise Template
+# Hash clinic
 
-This is a blank project you can use to craft your own Ruby projects for exercises
-and assessments.
+You work at a medical consulting company. You have a database of doctors and patients
+and you need to write some functions that can query that data. Using the tests to
+guide you, write the functions that are requested.
 
 #### Gems
 
